@@ -2,6 +2,7 @@ package net.hamza.skyblock.listener;
 
 import net.hamza.skyblock.item.ItemBuilder;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,7 +22,7 @@ public class SkyBlockMenuListener implements Listener {
         Inventory inventory = player.getInventory();
 
 
-        inventory.setItem(8 , new ItemBuilder(Material.NETHER_STAR)
+        inventory.setItem(8 , ItemBuilder.of(Material.NETHER_STAR)
                 .setDisplayName("§aSkyBlock Menu " + "§7(Right Click)")
                 .setLore("&7View all of your SkyBlock",
                          "&7progress, including your Skills,",
