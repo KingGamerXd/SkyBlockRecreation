@@ -1,0 +1,4 @@
+name: SkyBlock
+version: '${project.version}'
+main: net.hamza.skyblock.SkyBlock
+authors: [Hamza]
