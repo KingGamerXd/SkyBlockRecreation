@@ -3,10 +3,9 @@ package net.hamza.skyblock.event;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.hamza.skyblock.gui.SkyBlockGUI;
+import net.hamza.skyblock.gui.abstraction.SkyBlockGUI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.Inventory;

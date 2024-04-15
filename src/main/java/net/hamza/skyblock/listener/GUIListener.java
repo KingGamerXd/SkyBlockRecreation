@@ -1,10 +1,10 @@
 package net.hamza.skyblock.listener;
 
+import net.hamza.skyblock.event.GUICloseEvent;
 import net.hamza.skyblock.event.GUIOpenEvent;
-import net.hamza.skyblock.gui.GUIClickableItem;
-import net.hamza.skyblock.gui.GUIItem;
-import net.hamza.skyblock.gui.GUITest;
-import net.hamza.skyblock.gui.SkyBlockGUI;
+import net.hamza.skyblock.gui.abstraction.GUIClickableItem;
+import net.hamza.skyblock.gui.abstraction.GUIItem;
+import net.hamza.skyblock.gui.abstraction.SkyBlockGUI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -45,7 +45,9 @@ public class GUIListener implements Listener {
         if (SkyBlockGUI.GUI_MAP.get(player.getUniqueId()) == null) return;
         SkyBlockGUI gui = SkyBlockGUI.GUI_MAP.get(player.getUniqueId());
 
-        gui.onClose(event);
+        GUICloseEvent closeEvent = new GUICloseEvent(player , gui);
+
+        gui.onClose(closeEvent);
         SkyBlockGUI.GUI_MAP.remove(player.getUniqueId());
     }
 

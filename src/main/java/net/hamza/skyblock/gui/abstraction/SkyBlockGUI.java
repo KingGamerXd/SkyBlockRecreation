@@ -1,8 +1,9 @@
-package net.hamza.skyblock.gui;
+package net.hamza.skyblock.gui.abstraction;
 
 
 import lombok.Getter;
 import net.hamza.skyblock.SkyBlock;
+import net.hamza.skyblock.event.GUICloseEvent;
 import net.hamza.skyblock.event.GUIOpenEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -75,7 +76,7 @@ public abstract class SkyBlockGUI {
 
 
     public void onOpen(GUIOpenEvent event){}
-    public void onClose(InventoryCloseEvent event){}
+    public void onClose(GUICloseEvent event){}
     public void onTopClick(InventoryClickEvent event){}
     public void onBottomClick(InventoryClickEvent event){}
 

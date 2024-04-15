@@ -1,4 +1,4 @@
-package net.hamza.skyblock.gui;
+package net.hamza.skyblock.gui.abstraction;
 
 import org.bukkit.inventory.ItemStack;
 
