@@ -10,6 +10,5 @@ import java.lang.annotation.Target;
 public @interface CommandParameters {
     String name();
     String permission() default "";
-    boolean requirePlayer();
 
 }
