@@ -7,8 +7,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 public class SkyBlockMenuListener implements Listener {
 
@@ -32,6 +34,7 @@ public class SkyBlockMenuListener implements Listener {
     @EventHandler
     public void onClick(InventoryClickEvent event){
         Inventory inventory = event.getClickedInventory();
+        if (inventory == null) return;
 
         if (!(inventory.getType() == InventoryType.PLAYER)) return;
         if (event.getSlot() != 8) return;
@@ -40,6 +43,19 @@ public class SkyBlockMenuListener implements Listener {
 
         // todo : open inventory
 
+    }
+
+    @EventHandler
+    public void onDrop(PlayerDropItemEvent event){
+        ItemStack item = event.getItemDrop().getItemStack();
+
+        if (item.getType() != Material.NETHER_STAR) return;
+
+        if (item.getItemMeta() == null) return;
+
+        if (!item.getItemMeta().getDisplayName().equals("§aSkyBlock Menu " + "§7(Right Click)")) return;
+
+        event.setCancelled(true);
     }
 
 }
