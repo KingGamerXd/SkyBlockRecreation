@@ -1,5 +1,6 @@
 package net.hamza.skyblock;
 
+import lombok.Getter;
 import net.hamza.skyblock.command.abstraction.SkyBlockCommand;
 import net.hamza.skyblock.util.SkyBlockLogger;
 import org.bukkit.event.Listener;
@@ -11,9 +12,12 @@ import java.lang.reflect.InvocationTargetException;
 public final class SkyBlock extends JavaPlugin {
     private static final String PACKAGE_NAME = "net.hamza.skyblock";
 
+    @Getter
+    private static SkyBlock instance;
+
     @Override
     public void onEnable() {
-
+        instance = this;
         registerListeners();
         registerCommands();
     }
