@@ -39,11 +39,16 @@
             </goals>
           </execution>
         </executions>
-          <configuration>
-              <finalName>SkyBlock</finalName>
-              <outputDirectory>C:\Users\Hamza\IdeaProjects\SkyBlock\server\plugins</outputDirectory>
-          </configuration>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.0</version>
+            <configuration>
+                <finalName>SkyBlock</finalName>
+                <outputDirectory>C:\Users\Hamza\IdeaProjects\SkyBlock\server\plugins</outputDirectory>
+            </configuration>
+        </plugin>
     </plugins>
     <resources>
       <resource>
@@ -81,6 +86,11 @@
           <artifactId>lombok</artifactId>
           <version>1.18.30</version>
           <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.mongodb</groupId>
+          <artifactId>mongodb-driver-sync</artifactId>
+          <version>5.0.1</version>
       </dependency>
   </dependencies>
 </project>

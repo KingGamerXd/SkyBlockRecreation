@@ -3,7 +3,7 @@ package net.hamza.skyblock.command;
 import net.hamza.skyblock.command.abstraction.CommandParameters;
 import net.hamza.skyblock.command.abstraction.SkyBlockCommand;
 import net.hamza.skyblock.item.ItemBuilder;
-import net.hamza.skyblock.util.NBTItem;
+import net.hamza.skyblock.item.NBTItem;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
