@@ -2,6 +2,7 @@ package net.hamza.skyblock;
 
 import lombok.Getter;
 import net.hamza.skyblock.command.abstraction.SkyBlockCommand;
+import net.hamza.skyblock.database.SkyBlockDB;
 import net.hamza.skyblock.util.SkyBlockLogger;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,8 @@ public final class SkyBlock extends JavaPlugin {
         instance = this;
         registerListeners();
         registerCommands();
+        SkyBlockDB.connect();
+
     }
 
     @Override

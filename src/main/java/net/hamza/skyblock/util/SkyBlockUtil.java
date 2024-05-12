@@ -5,8 +5,6 @@ import net.minecraft.server.v1_8_R3.*;
 public class SkyBlockUtil {
 
 
-
-
     public static void runAsync(Runnable runnable){
         new Thread(runnable).start();
     }
