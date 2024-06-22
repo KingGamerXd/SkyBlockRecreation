@@ -3,7 +3,6 @@ package net.hamza.skyblock.player;
 import lombok.Getter;
 import lombok.Setter;
 import net.hamza.skyblock.database.SkyBlockDB;
-import net.hamza.skyblock.enums.SkyBlockStat;
 import net.hamza.skyblock.rank.SkyBlockRank;
 import net.hamza.skyblock.util.SkyBlockUtil;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
@@ -30,25 +29,19 @@ public class SkyBlockPlayer {
 
     private SkyBlockRank rank;
 
-    private SkyBlockDB database;
+    private final SkyBlockDB database;
 
-    private final Map<SkyBlockStat , Double> baseStats;
-    private final Map<SkyBlockStat , Double> liveStats;
 
 
     private SkyBlockPlayer(UUID uuid){
         this.uuid = uuid;
-        this.baseStats = new HashMap<>();
-        this.liveStats = new HashMap<>();
-        database = new SkyBlockDB("users" , new Document("_id" , uuid.toString()));
+        this.database = new SkyBlockDB("users" , new Document("_id" , uuid.toString()));
         load();
         PLAYER_CACHE.put(uuid , this);
     }
 
     public void tick() {
-        SkyBlockUtil.sendActionBar(this ,
-                ChatColor.RED + "" + Math.floor(getBaseStat(SkyBlockStat.HEALTH)) + "/" + Math.floor(getLiveStat(SkyBlockStat.HEALTH)) + SkyBlockStat.HEALTH.getSymbol()
-        );
+       // nothing here yet!
     }
 
     public void setRank(SkyBlockRank rank){
@@ -88,21 +81,6 @@ public class SkyBlockPlayer {
     public static SkyBlockPlayer of(Player player){
         if (player == null) return null;
         return of(player.getUniqueId());
-    }
-
-    public double getLiveStat(SkyBlockStat skyBlockStat){
-        return liveStats.getOrDefault(skyBlockStat , skyBlockStat.getBaseValue());
-    }
-    public void setLiveStat(SkyBlockStat stat , double value){
-        liveStats.put(stat , value);
-    }
-
-    public double getBaseStat(SkyBlockStat skyBlockStat){
-        return baseStats.getOrDefault(skyBlockStat , skyBlockStat.getBaseValue());
-    }
-
-    public void setBaseStat(SkyBlockStat stat , double value){
-        baseStats.put(stat , value);
     }
 
     public void sendPacket(Packet<?> packet){

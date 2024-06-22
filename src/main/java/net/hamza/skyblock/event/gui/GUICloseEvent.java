@@ -1,7 +1,6 @@
-package net.hamza.skyblock.event;
+package net.hamza.skyblock.event.gui;
 
 import lombok.Getter;
-import net.hamza.skyblock.SkyBlock;
 import net.hamza.skyblock.gui.abstraction.SkyBlockGUI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;

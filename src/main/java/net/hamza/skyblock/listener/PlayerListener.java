@@ -1,6 +1,7 @@
 package net.hamza.skyblock.listener;
 
 import net.hamza.skyblock.SkyBlock;
+import net.hamza.skyblock.packet.PacketReader;
 import net.hamza.skyblock.player.SkyBlockPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -26,6 +27,12 @@ public class PlayerListener implements Listener {
                 skyBlockPlayer.tick();
             }
         }.runTaskTimer(SkyBlock.getInstance() , 20 , 20);
+    }
+
+    @EventHandler
+    public void inject(PlayerJoinEvent event){
+        PacketReader reader = new PacketReader(event.getPlayer());
+        reader.inject();
     }
 
     @EventHandler

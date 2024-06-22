@@ -1,7 +1,7 @@
 package net.hamza.skyblock.listener;
 
-import net.hamza.skyblock.event.GUICloseEvent;
-import net.hamza.skyblock.event.GUIOpenEvent;
+import net.hamza.skyblock.event.gui.GUICloseEvent;
+import net.hamza.skyblock.event.gui.GUIOpenEvent;
 import net.hamza.skyblock.gui.abstraction.GUIClickableItem;
 import net.hamza.skyblock.gui.abstraction.GUIItem;
 import net.hamza.skyblock.gui.abstraction.SkyBlockGUI;

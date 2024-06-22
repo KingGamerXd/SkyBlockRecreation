@@ -1,4 +1,4 @@
-package net.hamza.skyblock.event;
+package net.hamza.skyblock.event.gui;
 
 
 import lombok.Getter;
