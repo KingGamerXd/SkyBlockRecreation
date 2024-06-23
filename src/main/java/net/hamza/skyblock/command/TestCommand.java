@@ -8,7 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-@CommandParameters(name = "test")
+@CommandParameters(description = "Test command ig" , aliases = "stest")
 public class TestCommand extends SkyBlockCommand {
 
     @Override

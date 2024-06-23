@@ -1,6 +1,7 @@
 package net.hamza.skyblock.rank;
 
 import lombok.Getter;
+import lombok.experimental.Accessors;
 import org.bukkit.ChatColor;
 
 @Getter
@@ -17,8 +18,8 @@ public enum SkyBlockRank {
     VIP(ChatColor.RED + "[" + ChatColor.WHITE + "VIP" + ChatColor.RED + "] ", 2),
     DEFAULT(ChatColor.GRAY + " " + ChatColor.GRAY, 1);
 
-    private String prefix;
-    private int level;
+    private final String prefix;
+    private final int level;
     SkyBlockRank(String prefix, int level) {
         this.prefix = prefix;
         this.level = level;

@@ -3,10 +3,11 @@ package net.hamza.skyblock.command;
 import net.hamza.skyblock.command.abstraction.CommandParameters;
 import net.hamza.skyblock.command.abstraction.SkyBlockCommand;
 import net.hamza.skyblock.player.SkyBlockPlayer;
+import net.hamza.skyblock.rank.SkyBlockRank;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-@CommandParameters(name = "coins")
+@CommandParameters(description = "Modify player coins", rank = SkyBlockRank.ADMIN)
 public class CoinsCommand extends SkyBlockCommand {
 
     @Override

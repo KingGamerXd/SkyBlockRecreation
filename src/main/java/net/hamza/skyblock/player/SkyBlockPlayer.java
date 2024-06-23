@@ -26,7 +26,7 @@ public class SkyBlockPlayer {
     @Getter
     @Setter
     private long coins;
-
+    @Getter
     private SkyBlockRank rank;
 
     private final SkyBlockDB database;

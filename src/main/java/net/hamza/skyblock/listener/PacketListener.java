@@ -1,11 +1,9 @@
 package net.hamza.skyblock.listener;
 
-import lombok.Getter;
 import net.hamza.skyblock.event.packet.PacketPreSentEvent;
 import net.hamza.skyblock.event.packet.PacketReceiveEvent;
 import net.hamza.skyblock.util.SkyBlockLogger;
 import net.minecraft.server.v1_8_R3.Packet;
-import net.minecraft.server.v1_8_R3.PacketPlayOutBlockChange;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,10 +22,5 @@ public class PacketListener implements Listener {
         Player player = event.getPlayer();
         Packet<?> packet = event.getPacket();
         SkyBlockLogger.info(player.getName() + " is receiving " + packet.getClass().getSimpleName());
-        event.setCancelled(packet.getClass().getSimpleName().equalsIgnoreCase("PacketPlayOutChat"));
     }
-
-
-
-
 }
